@@ -11,7 +11,7 @@ def install_pip():
         print("pip installed successfully!")
     except subprocess.CalledProcessError as e:
         print(f"An error occurred during pip installation: {e}")
-        exit()
+  
 
 # Check if pip is installed
 try:
