@@ -1,3 +1,4 @@
+
 # Point 1: Install necessary packages
 
 
@@ -11,7 +12,7 @@ def install_pip():
         print("pip installed successfully!")
     except subprocess.CalledProcessError as e:
         print(f"An error occurred during pip installation: {e}")
-  
+ # exit()
 
 # Check if pip is installed
 try:
@@ -28,7 +29,7 @@ try:
     subprocess.run(['pip', 'install', 'opencv-python', 'numpy'])
 except Exception as e:
     print(f"An error occurred during package installation: {e}")
-
+    # exit()
 
 import cv2
 import numpy as np
@@ -97,8 +98,11 @@ for frame in range(num_frames):
             ball["velocity_y"] *= -0.8
 
     video_writer.write(img)
+    
+    if (frame + 1) % 100 == 0:
+        ball_positions = [(round(ball["x"], 2), round(ball["y"], 2)) for ball in balls]
+        print(f'Frame: {frame + 1}/{num_frames}, Ball Positions: {ball_positions}')
 
-    print(f'Frame: {frame + 1}/{num_frames}, Ball Positions: {[(ball["x"], ball["y"]) for ball in balls]}')
 
     if frame == 0:
         video_creation_datetime = datetime.datetime.now()
@@ -108,7 +112,7 @@ video_writer.release()
 full_path = os.path.abspath(output_file)
 
 print(f'\nVideo generation complete. Check the output file at:\n{full_path}\n')
-print(f'Program created on: {program_creation_datetime}')
+print(f'Program created on: January 28, 2024 21:45:00')
 print(f'Video created on: {video_creation_datetime}')
 print('Credits:')
 print(f'  - Python {platform.python_version()}')
