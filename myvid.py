@@ -28,7 +28,7 @@ try:
     subprocess.run(['pip', 'install', 'opencv-python', 'numpy'])
 except Exception as e:
     print(f"An error occurred during package installation: {e}")
-    # exit()
+
 
 import cv2
 import numpy as np
