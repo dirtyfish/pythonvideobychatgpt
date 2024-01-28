@@ -1,3 +1,11 @@
+All the code was written by chatGPT, and the prompt for the code was also
+refined by chatGPT. Some code was moved and some deleted. As the part work
+well isolated, but needs some minor adjustments to work better together.
+
+I never created a program that would install necessary part including pip
+automatically, and I think it is cool if it works. It seems to work well when
+run from text editor, some issues when run from command line.
+
 Just run this, or open and copy this into you python editor:
 https://raw.githubusercontent.com/dirtyfish/pythonvideobychatgpt/main/myvid.py
 
