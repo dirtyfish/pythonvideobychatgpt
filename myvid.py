@@ -1,5 +1,29 @@
-import subprocess
 # Point 1: Install necessary packages
+
+
+
+import subprocess
+import sys
+
+def install_pip():
+    try:
+        subprocess.run([sys.executable, '-m', 'ensurepip', '--default-pip'], check=True)
+        print("pip installed successfully!")
+    except subprocess.CalledProcessError as e:
+        print(f"An error occurred during pip installation: {e}")
+        exit()
+
+# Check if pip is installed
+try:
+    subprocess.run(['pip', '--version'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)
+    print("pip is already installed.")
+except subprocess.CalledProcessError:
+    print("pip is not installed. Installing now...")
+    install_pip()
+
+
+
+
 try:
     subprocess.run(['pip', 'install', 'opencv-python', 'numpy'])
 except Exception as e:
